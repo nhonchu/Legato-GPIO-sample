@@ -1,0 +1,18 @@
+requires:
+{
+    api:
+    {
+        le_gpioPin42 = le_gpio.api
+        le_gpioPin33 = le_gpio.api
+        le_gpioPin13 = le_gpio.api
+        le_gpioPin7 = le_gpio.api
+        le_gpioPin8 = le_gpio.api
+
+        le_cfg.api
+    }
+}
+sources:
+{
+    gpioSample.c
+    gpio_iot.c
+}
