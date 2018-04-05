@@ -1,0 +1,34 @@
+sandboxed: false
+executables:
+{
+    gpioSample = ( gpio_component )
+}
+processes:
+{
+    envVars:
+    {
+        LE_LOG_LEVEL = DEBUG
+    }
+    run:
+    {
+        (gpioSample)
+    }
+}
+bindings:
+{
+    gpioSample.gpio_component.le_gpioPin13 -> gpioService.le_gpioPin13
+    gpioSample.gpio_component.le_gpioPin42 -> gpioService.le_gpioPin42
+    gpioSample.gpio_component.le_gpioPin33 -> gpioService.le_gpioPin33
+    gpioSample.gpio_component.le_gpioPin7 -> gpioService.le_gpioPin7
+    gpioSample.gpio_component.le_gpioPin8 -> gpioService.le_gpioPin8
+}
+requires:
+{
+    configTree:
+    {
+        [w] .       // I need write access to my configuration data.
+    }
+}
+
+start: auto
+version: 1.0
